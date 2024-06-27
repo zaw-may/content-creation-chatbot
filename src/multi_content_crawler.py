@@ -25,7 +25,7 @@ def scraper(chromedriver_path):
     for url in urls:
 
         driver.get(url)
-        content_xml = driver.find_element("xpath", '//*[@id="ContentPane30"]/article/div/div[3]')
+        content_xml = driver.find_element("xpath", '//*[@id="ContentPane30"]/article/div/div[3]') #to be changed with custom xpath
         content_html = content_xml.get_attribute('innerHTML')
         #driver.quit()
 
