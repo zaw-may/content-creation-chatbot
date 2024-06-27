@@ -18,7 +18,7 @@ def scraper(chromedriver_path):
 
     driver = webdriver.Chrome(options = chrome_options)
 
-    urls = os.getenv('URLS').split(',')
+    urls = os.getenv('URLS').split(',') #to be changed with custom url list= [url1, url2, url3,]
 
     serialno = 0
 

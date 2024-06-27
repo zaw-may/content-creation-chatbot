@@ -11,7 +11,7 @@ def scraper(chromedriver_path):
 
     """Get the health education knowledge from WebMed Website."""
 
-    url = os.getenv('URL')
+    url = os.getenv('URL') #to be changed with custom url
     
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--incognito")

@@ -7,6 +7,10 @@
 //*[@id="ContentPane30"]/article/div/header = To Extract Header
 
 
+To Test Links
+-------------
+https://www.webmd.com/fitness-exercise/news/20240528/step-up-to-better-health-the-case-for-taking-the-stairs, https://www.webmd.com/diet/features/the-benefits-of-vitamin-c, https://www.webmd.com/diet/what-are-processed-foods
+
 
 
 
