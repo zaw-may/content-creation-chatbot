@@ -2,12 +2,17 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from fpdf import FPDF
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def scraper(chromedriver_path):
-    
+
     """Get the health education knowledge from WebMed Website."""
 
-    url = "https://www.webmd.com/fitness-exercise/news/20240528/step-up-to-better-health-the-case-for-taking-the-stairs"
+    url = os.getenv('URL')
+    
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument("--incognito")
     chrome_options.add_argument("--window-size=1920x1080")
@@ -34,6 +39,7 @@ def scraper(chromedriver_path):
     pdf_path_n_filename = "..\data\med_knowledge.pdf" 
     result_pdf.output(pdf_path_n_filename)
     print(f"Content Saved to {pdf_path_n_filename}")
+    #print(os.getenv('URL'))
 
     return pdf_path_n_filename
 

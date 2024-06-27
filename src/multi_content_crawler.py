@@ -2,6 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from fpdf import FPDF
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def scraper(chromedriver_path):
 
@@ -14,16 +18,12 @@ def scraper(chromedriver_path):
 
     driver = webdriver.Chrome(options = chrome_options)
 
-    urls = [
-        'https://www.webmd.com/fitness-exercise/news/20240528/step-up-to-better-health-the-case-for-taking-the-stairs',
-        'https://www.webmd.com/diet/features/the-benefits-of-vitamin-c',
-        'https://www.webmd.com/diet/what-are-processed-foods',
-    ]
+    urls = os.getenv('URLS').split(',')
 
     serialno = 0
 
     for url in urls:
-        
+
         driver.get(url)
         content_xml = driver.find_element("xpath", '//*[@id="ContentPane30"]/article/div/div[3]')
         content_html = content_xml.get_attribute('innerHTML')
@@ -48,6 +48,8 @@ def scraper(chromedriver_path):
         print(f"Content Saved to {filename}")
 
         serialno += 1
+    
+        #print("Extracting content from : " + url)
 
     return 
 

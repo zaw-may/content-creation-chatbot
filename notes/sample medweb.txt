@@ -1,0 +1,12 @@
+//*[@id="ContentPane30"]/article/div/div[3] = To Extract Content
+//*[@id="ContentPane31"]/div/div/div[2] = To Extract Content Slide
+
+//*[@id="ContentPane51"] = To Extract Related Links
+//*[@id="ContentPane32"] = To Extract News Links 
+
+//*[@id="ContentPane30"]/article/div/header = To Extract Header
+
+
+
+
+
