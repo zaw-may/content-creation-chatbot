@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from fpdf import FPDF
 
 def scraper(chromedriver_path):
+    
     """Get the health education knowledge from WebMed Website."""
 
     url = "https://www.webmd.com/fitness-exercise/news/20240528/step-up-to-better-health-the-case-for-taking-the-stairs"
@@ -30,7 +31,7 @@ def scraper(chromedriver_path):
     for line in content_text.split('\n'):
         result_pdf.multi_cell(w = 0, h = 10, txt = line.encode('latin1', 'replace').decode('latin1')) 
 
-    pdf_path_n_filename = "..\data\med_knowledge.pdf"
+    pdf_path_n_filename = "..\data\med_knowledge.pdf" 
     result_pdf.output(pdf_path_n_filename)
     print(f"Content Saved to {pdf_path_n_filename}")
 
