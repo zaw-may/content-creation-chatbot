@@ -50,6 +50,11 @@ def all_tokenization_tasks(df):
     #Tokenization
     df['tokenized_text'] = df['text'].apply(lambda x: word_tokenize(x))
 
+    #Tokenization using BertTokenizer
+    #from transformers import BertTokenizer
+    #tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    #df['tokenized_text'] = df['text'].apply(lambda x: tokenizer.tokenize(x)) 
+
     #Removing stop words
     df['tokenized_text'] = df['tokenized_text'].apply(lambda x: [word for word in x if word not in stop_words])
 
